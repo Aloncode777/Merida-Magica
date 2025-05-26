@@ -1,0 +1,192 @@
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+/* Contenedor del carrusel como fondo */
+.background-carousel {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.background-carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.background-carousel img.active {
+    opacity: 1;
+}
+
+/* Contenido sobre el carrusel */
+.content {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: rgba(46, 134, 193, 0.4);
+    border-radius: 0px 300px 300px 0px;
+    max-width: 700px; /* Limitar el ancho máximo */
+    margin: 0 auto; /* Centrar el contenido */
+    left: -350px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.4em;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+p {
+    font-size: 1.3em;
+    max-width: 600px;
+    line-height: 1.4;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+    .content {
+        padding: 10px; /* Reducir el padding en móviles */
+    }
+}
+
+/* Estilos para el menú de navegación */
+nav {
+    background-color: rgb(0, 63, 235);
+    display: flex;
+    flex-direction: row;  
+    justify-content: flex-end; /* Cambiar a flex-end para alinear a la derecha */
+}
+
+.nav-link {
+    display: block;
+    color: white;
+    padding: 15px 20px; /* Ajustar el padding */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px; /* Reducir el tamaño de fuente */
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: #01a7e5;
+}
+
+/* Ajustes para el logo */
+.logo {
+    font-size: 30px; /* Reducir el tamaño del logo */
+    text-align: center; /* Centrar el logo */
+    position: relative;
+    left: -930px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 50px;
+}
+
+.dropdown {
+    position: relative;
+    height: 20pt;
+    justify-content: center;
+    
+  }
+  .dropdown input[type="checkbox"] {
+    display: none;
+  }
+
+  .dropdown label {
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    user-select: none;
+    text-align: center;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+  }
+  .dropdown label:hover {
+    background-color: #01a7e5 ;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    margin-top: 5px;
+    background-color:  rgb(0, 63, 235);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: #01a7e5;
+  }
+  /* Mostrar menú al activar el checkbox */
+  .dropdown input[type="checkbox"]:checked + label + .dropdown-menu {
+    display: block;
+  }
+  /* Responsive */
+  @media (max-width: 400px) {
+    .dropdown-menu {
+      min-width: 140px;
+    }
+  }
+
+/* Ajustes para el carrusel en pantallas pequeñas */
+@media (max-width: 768px) {
+    .background-carousel {
+        height: 50vh; /* Reducir la altura del carrusel */
+    }
+    .content {
+        height: auto; /* Permitir que el contenido se ajuste */
+        padding: 20px; /* Ajustar el padding */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
